@@ -1,0 +1,613 @@
+.login-signup-forgot {
+  display: flex;
+  flex-direction: column;
+  height: 1024px;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 80px 180px;
+  position: relative;
+  background: linear-gradient(
+      0deg,
+      rgba(246, 246, 248, 1) 0%,
+      rgba(246, 246, 248, 1) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+}
+
+.login-signup-forgot .container-login {
+  display: flex;
+  height: 790px;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  margin-top: -53.00px;
+  margin-bottom: -53.00px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 6px 6px 20px 3px #dbd9dd26, -9px 0px 30px #d8d6da26;
+}
+
+.login-signup-forgot .login-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 80px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  background: linear-gradient(
+    222deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(235, 239, 253, 1) 77%,
+    rgba(235, 239, 253, 1) 100%
+  );
+}
+
+.login-signup-forgot .content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 38px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .flower-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .frame {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: #3655ea1a;
+  border-radius: 40px;
+}
+
+.login-signup-forgot .jam-flower {
+  position: relative;
+  top: 14px;
+  left: 14px;
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1;
+}
+
+.login-signup-forgot .vector {
+  position: absolute;
+  width: 80.00%;
+  height: 87.50%;
+  top: 6.25%;
+  left: 10.00%;
+}
+
+.login-signup-forgot .header {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .text-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  height: 40px;
+  margin-top: -1.00px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-signup-forgot .container {
+  width: 480px;
+  gap: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .enter-pet-name {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  align-items: flex-start;
+  gap: 6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .label-pet-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .enter-your-pet-s {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  margin-top: -1.00px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #110d1b;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.login-signup-forgot .input-pet-name {
+  display: flex;
+  flex-direction: column;
+  height: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 9px 13px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #e5e7eb;
+  box-shadow: 0px 1px 2px #0000000d;
+}
+
+.login-signup-forgot .div-wrapper {
+  align-self: stretch;
+  width: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .div-wrapper::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.login-signup-forgot .div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  font-family: var(--inter-regular-font-family);
+  font-weight: var(--inter-regular-font-weight);
+  color: #6b7280;
+  font-size: var(--inter-regular-font-size);
+  letter-spacing: var(--inter-regular-letter-spacing);
+  line-height: var(--inter-regular-line-height);
+  font-style: var(--inter-regular-font-style);
+}
+
+.login-signup-forgot .buttons {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .button-submit {
+  all: unset;
+  box-sizing: border-box;
+  height: 48px;
+  padding: 9px 25px;
+  background-color: #3655ea;
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px #0000000d;
+  display: flex;
+  width: 480px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.login-signup-forgot .text-wrapper-2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.login-signup-forgot .button-login {
+  gap: 76px;
+  flex: 0 0 auto;
+  display: flex;
+  width: 480px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.login-signup-forgot .text-wrapper-3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #607afb;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 23px;
+  white-space: nowrap;
+}
+
+.login-signup-forgot .design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  background-color: #3655ea1a;
+}
+
+.login-signup-forgot .listening-to {
+  position: relative;
+  width: 565.78px;
+  height: 579.37px;
+  aspect-ratio: 0.98;
+  object-fit: cover;
+}
+/* Inject original CSS from globals.css and styleguide.css here */
+
+.login-signup-forgot {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 160px 80px 180px;
+  position: relative;
+  background: linear-gradient(
+      0deg,
+      rgba(246, 246, 248, 1) 0%,
+      rgba(246, 246, 248, 1) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+}
+
+.login-signup-forgot .container-login {
+  display: flex;
+  max-height: 790px;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 6px 6px 20px 3px #dbd9dd26, -9px 0px 30px #d8d6da26;
+}
+
+.login-signup-forgot .login-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 80px;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  background: linear-gradient(
+    222deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(235, 239, 253, 1) 77%,
+    rgba(235, 239, 253, 1) 100%
+  );
+}
+
+.login-signup-forgot .content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 38px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .flower-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .frame {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: #3655ea1a;
+  border-radius: 40px;
+}
+
+.login-signup-forgot .jam-flower {
+  position: relative;
+  top: 14px;
+  left: 14px;
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1;
+}
+
+.login-signup-forgot .vector {
+  position: absolute;
+  width: 80.00%;
+  height: 87.50%;
+  top: 6.25%;
+  left: 10.00%;
+}
+
+.login-signup-forgot .header {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .text-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  height: 40px;
+  margin-top: -1.00px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.login-signup-forgot .container {
+  width: 480px;
+  gap: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .enter-pet-name {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  align-items: flex-start;
+  gap: 6px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .label-pet-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .enter-your-pet-s {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  margin-top: -1.00px;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #110d1b;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.login-signup-forgot .input-pet-name {
+  display: flex;
+  flex-direction: column;
+  height: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 9px 13px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #e5e7eb;
+  box-shadow: 0px 1px 2px #0000000d;
+}
+
+.login-signup-forgot .input-field {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-family: var(--inter-regular-font-family);
+  font-weight: var(--inter-regular-font-weight);
+  color: #110d1b;
+  font-size: var(--inter-regular-font-size);
+  letter-spacing: var(--inter-regular-letter-spacing);
+  line-height: var(--inter-regular-line-height);
+  font-style: var(--inter-regular-font-style);
+}
+
+.login-signup-forgot .input-field::placeholder {
+  color: #6b7280;
+}
+
+.login-signup-forgot .input-field:focus {
+  outline: 2px solid #3655ea;
+  outline-offset: -2px;
+}
+
+.login-signup-forgot .buttons {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.login-signup-forgot .button-submit {
+  all: unset;
+  box-sizing: border-box;
+  height: 48px;
+  padding: 9px 25px;
+  background-color: #3655ea;
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px #0000000d;
+  display: flex;
+  width: 480px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-signup-forgot .button-submit:hover {
+  background-color: #2a45d0;
+}
+
+.login-signup-forgot .button-submit:active {
+  background-color: #1f35b8;
+}
+
+.login-signup-forgot .button-submit:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.login-signup-forgot .text-wrapper-2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.login-signup-forgot .button-login {
+  gap: 76px;
+  flex: 0 0 auto;
+  display: flex;
+  width: 480px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-signup-forgot .button-login:hover .text-wrapper-3 {
+  text-decoration: underline;
+}
+
+.login-signup-forgot .text-wrapper-3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter-Bold", Helvetica;
+  font-weight: 700;
+  color: #607afb;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 23px;
+  white-space: nowrap;
+}
+
+.login-signup-forgot .design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  flex-grow: 1;
+  background-color: #3655ea1a;
+}
+
+.login-signup-forgot .listening-to {
+  position: relative;
+  width: 565.78px;
+  height: 579.37px;
+  aspect-ratio: 0.98;
+  object-fit: cover;
+}

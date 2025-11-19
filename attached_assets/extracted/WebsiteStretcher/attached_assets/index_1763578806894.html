@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Emotional Flow - Login</title>
+    <meta name="description" content="Track your mood with Emotional Flow" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="login">
+      <div class="container-login-sign">
+        <section class="login-signup">
+          <div class="div">
+            <div class="logo">
+              <img class="img" src="img/logo.svg" alt="Emotional Flow logo" />
+              <header class="header">
+                <h1 class="text-wrapper">Emotional Flow</h1>
+              </header>
+            </div>
+            <div class="text">
+              <h2 class="text-wrapper-2">Welcome!</h2>
+              <p class="p">Ready to track your mood today?</p>
+            </div>
+            <form class="login-form" action="#" method="post" novalidate>
+              <div class="div-2">
+                <label class="email" for="email-input">Email adress</label>
+                <div class="div-wrapper">
+                  <input
+                    class="container-email"
+                    id="email-input"
+                    name="email"
+                    placeholder="your@mail.com"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+              </div>
+              <div class="div-2">
+                <label class="password" for="password-input">
+                  <span class="text-wrapper-3">Password</span>
+                </label>
+                <div class="div-wrapper">
+                  <div class="container-password">
+                    <input
+                      class="text-wrapper-4"
+                      id="password-input"
+                      name="password"
+                      placeholder="your_password"
+                      type="password"
+                      autocomplete="current-password"
+                      required
+                      aria-required="true"
+                    />
+                    <button class="eye-closed-icon" type="button" aria-label="Toggle password visibility">
+                      <img class="vector" src="img/vector.svg" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="div">
+                <button class="button-login" type="submit">
+                  <span class="text-wrapper-5">Login</span>
+                </button>
+                <div class="button-signup">
+                  <a class="text-wrapper-6" href="#forgot-password">Forgot password?</a>
+                  <p class="don-t-have-an">
+                    <span class="span">Don't have an account? </span>
+                    <a class="text-wrapper-7" href="#signup">Sign up</a>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+        <aside class="design" aria-label="Decorative illustration">
+          <img
+            class="listening-to"
+            src="img/listening-to-feedback-2-1.png"
+            alt="Person listening to feedback illustration"
+          />
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

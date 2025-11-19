@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Flow - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo-section">
+                <div class="logo-icon">EF</div>
+                <h1>Emotional Flow</h1>
+            </div>
+            
+            <div class="auth-content">
+                <div class="auth-image">
+                    <img src="img/illustration.png" alt="Person reflecting on emotions" />
+                </div>
+                
+                <div class="auth-form-section">
+                    <h2 id="auth-title">Welcome Back</h2>
+                    <p id="auth-subtitle">Track your emotional journey</p>
+                    
+                    <form id="auth-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="you@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required placeholder="••••••••">
+                        </div>
+                        
+                        <div id="signup-fields" style="display: none;">
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Sign In</button>
+                    </form>
+                    
+                    <div class="auth-footer">
+                        <p id="auth-toggle">
+                            Don't have an account? <a href="#" id="toggle-link">Sign Up</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
