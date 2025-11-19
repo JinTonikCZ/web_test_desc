@@ -19,6 +19,9 @@ let checkInData = {
 };
 let currentStep = 1;
 
+
+// ------- LOCAL STORAGE -----------------------------------------------------
+
 function getEmotionEntries() {
     const stored = localStorage.getItem('emotionEntries');
     if (stored) return JSON.parse(stored);
@@ -47,7 +50,15 @@ function formatDate(date) {
     return new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
-if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+
+// --------------------------------------------------------------
+//   LOGIN / SIGNUP LOGIC (index.html)
+// --------------------------------------------------------------
+
+if (window.location.pathname.endsWith('index.html') || 
+    window.location.pathname.endsWith('/') ||
+    window.location.pathname.includes('web_test_desc')) {
+
     const authForm = document.getElementById('auth-form');
     const toggleLink = document.getElementById('toggle-link');
     const authTitle = document.getElementById('auth-title');
@@ -56,6 +67,7 @@ if (window.location.pathname.endsWith('index.html') || window.location.pathname 
     const submitBtn = authForm.querySelector('button[type="submit"]');
     let isSignup = false;
 
+    // Toggle between sign in / sign up
     toggleLink.addEventListener('click', (e) => {
         e.preventDefault();
         isSignup = !isSignup;
@@ -79,6 +91,7 @@ if (window.location.pathname.endsWith('index.html') || window.location.pathname 
         document.getElementById('toggle-link').addEventListener('click', arguments.callee);
     });
 
+    // Submit login/signup
     authForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
@@ -94,9 +107,16 @@ if (window.location.pathname.endsWith('index.html') || window.location.pathname 
         }
         
         localStorage.setItem('userEmail', email);
-        window.location.href = 'analytics.html';
+
+        // 🔥 MAIN FIX FOR GITHUB PAGES:
+        window.location.href = './analytics.html';
     });
 }
+
+
+// --------------------------------------------------------------
+//          ANALYTICS PAGE LOGIC (analytics.html)
+// --------------------------------------------------------------
 
 if (window.location.pathname.endsWith('analytics.html')) {
     const openCheckinBtn = document.getElementById('open-checkin');
