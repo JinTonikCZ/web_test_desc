@@ -593,14 +593,11 @@ window.onerror = function (msg, src, line, col, err) {
 ===================================== */
 
 // если мы на странице аналитики — обновляем весь UI
-if (window.location.pathname.includes("analytics.html")) {
-    try {
-        refreshAll();
-    } catch (e) {
-        console.error("Analytics init error:", e);
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("%cEmotional Flow loaded successfully", "color:#6d28d9; font-size:14px;");
+
+    if (window.location.pathname.includes("analytics")) {
+        console.log("Generating weekly chart...");
+        generateWeeklyChart();
     }
-}
-
-// если мы на странице логина — ничего не делаем, всё уже инициализировано в DOMContentLoaded
-
-console.log("%cEmotional Flow loaded successfully", "color:#6d28d9; font-size:14px;");
+});
