@@ -118,7 +118,7 @@ if (window.location.pathname.endsWith('index.html') ||
 //          ANALYTICS PAGE LOGIC (analytics.html)
 // --------------------------------------------------------------
 
-if (window.location.pathname.endsWith('analytics.html')) {
+if (window.location.href.includes('analytics.html')) {
     const openCheckinBtn = document.getElementById('open-checkin');
     const checkinModal = document.getElementById('checkin-modal');
     const closeCheckinBtn = document.getElementById('close-checkin');
