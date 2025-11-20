@@ -766,3 +766,17 @@ body {
         gap: 8px;
     }
 }
+.emotion-item {
+    cursor: pointer;
+    border: 2px solid #d1d5db;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.emotion-item.active {
+    border-color: #6366f1 !important;
+    background: #eef2ff;
+    transform: scale(1.05);
+}
