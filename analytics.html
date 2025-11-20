@@ -5,138 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emotional Flow - Analytics</title>
 
-    <!-- FIXED PATHS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <div class="header-left">
-                <div class="logo-icon">EF</div>
-                <h1>Emotional Flow</h1>
-            </div>
-            <nav class="header-nav">
-                <a href="./analytics.html" class="nav-link active">Home</a>
-                <button class="user-menu-btn" id="user-menu-btn">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M4 18C4 14.6863 6.68629 12 10 12C13.3137 12 16 14.6863 16 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </nav>
-        </header>
 
-        <main class="main-content">
-            <div class="content-wrapper">
-                <aside class="sidebar">
+<header class="app-header">
+    <div class="logo-icon">EF</div>
+    <h1>Emotional Flow</h1>
+    <button id="user-email-display" class="user-btn">User</button>
+</header>
 
-                    <div class="calendar-widget">
-                        <div class="legend">
-                            <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span>Joy</div>
-                            <div class="legend-item"><span class="legend-dot" style="background:#60a5fa"></span>Sadness</div>
-                            <div class="legend-item"><span class="legend-dot" style="background:#ef4444"></span>Anger</div>
-                            <div class="legend-item"><span class="legend-dot" style="background:#34d399"></span>Calm</div>
-                            <div class="legend-item"><span class="legend-dot" style="background:#c084fc"></span>Anxiety</div>
-                            <div class="legend-item"><span class="legend-dot" style="background:#d5c7b4"></span>Neutral</div>
-                        </div>
 
-                        <div class="calendar-divider"></div>
+<main class="main-content">
 
-                        <div class="calendar-header">
-                            <button class="calendar-nav" id="prev-month">&lt;</button>
-                            <h3 id="current-month">November 2025</h3>
-                            <button class="calendar-nav" id="next-month">&gt;</button>
-                        </div>
+    <section class="weekly-section">
+        <h2>Weekly Insights</h2>
+        <canvas id="weeklyChart" width="600" height="260"></canvas>
+    </section>
 
-                        <div class="calendar-grid" id="calendar-grid"></div>
-                    </div>
+    <section class="today-section">
+        <h2>Today's Emotions</h2>
+        <div id="today-list"></div>
+    </section>
 
-                    <button class="btn-primary check-in-btn" id="open-checkin">Daily Check-in</button>
-                </aside>
+</main>
 
-                <div class="dashboard-main">
-                    <div class="weekly-insights">
-                        <h2>Weekly Insights</h2>
-                        <div class="chart-container" id="weekly-chart"></div>
-                    </div>
-
-                    <div class="daily-details">
-                        <div class="details-header">
-                            <h2>Today's Details</h2>
-                            <button class="btn-secondary" id="view-all-details">View All</button>
-                        </div>
-                        <div class="details-list" id="details-list"></div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <div id="checkin-modal" class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <div class="progress-section">
-                    <span class="step-label">Step <span id="current-step">1</span>/3</span>
-                    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-                </div>
-                <button class="modal-close" id="close-checkin">&times;</button>
-            </div>
-
-            <div class="modal-body">
-                <div class="step-content" id="step-1">
-                    <h3>Which category best describes your feeling?</h3>
-                    <div class="emotion-grid">
-                        <!-- эмоции -->
-                        <label class="emotion-option"><input type="radio" name="emotion" value="joy"><div class="emotion-card" style="border-color:#facc15"><span class="emotion-icon">😊</span></div><span class="emotion-label">Joy</span></label>
-                        <label class="emotion-option"><input type="radio" name="emotion" value="sadness"><div class="emotion-card" style="border-color:#60a5fa"><span class="emotion-icon">😢</span></div><span class="emotion-label">Sadness</span></label>
-                        <label class="emotion-option"><input type="radio" name="emotion" value="anger"><div class="emotion-card" style="border-color:#ef4444"><span class="emotion-icon">😠</span></div><span class="emotion-label">Anger</span></label>
-                        <label class="emotion-option"><input type="radio" name="emotion" value="calm"><div class="emotion-card" style="border-color:#34d399"><span class="emotion-icon">😌</span></div><span class="emotion-label">Calm</span></label>
-                        <label class="emotion-option"><input type="radio" name="emotion" value="anxiety"><div class="emotion-card" style="border-color:#c084fc"><span class="emotion-icon">😰</span></div><span class="emotion-label">Anxiety</span></label>
-                        <label class="emotion-option"><input type="radio" name="emotion" value="neutral"><div class="emotion-card" style="border-color:#d5c7b4"><span class="emotion-icon">😐</span></div><span class="emotion-label">Neutral</span></label>
-                    </div>
-                </div>
-
-                <div class="step-content" id="step-2" style="display:none;">
-                    <h3>Rate the intensity</h3>
-                    <div class="intensity-slider">
-                        <input type="range" id="intensity" min="1" max="10" value="5">
-                        <div class="intensity-labels">
-                            <span>Low</span>
-                            <span id="intensity-value">5</span>
-                            <span>High</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step-content" id="step-3" style="display:none;">
-                    <h3>What triggered this feeling?</h3>
-                    <textarea id="trigger-note" class="modal-textarea"></textarea>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button class="btn-secondary" id="modal-back" style="display:none;">Back</button>
-                <button class="btn-primary" id="modal-next">Next</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="details-modal" class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content small-modal">
-            <div class="modal-header">
-                <h3>Daily Emotion Details</h3>
-                <button class="modal-close" id="close-details">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="detail-entries" id="detail-entries"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FIXED PATH -->
-    <script src="./script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
