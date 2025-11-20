@@ -259,30 +259,35 @@ function initializeCheckInModal() {
         { name: "Neutral", color: "#d5c7b4" },
     ];
 
-    function renderEmotions() {
-        const grid = document.getElementById("emotion-grid");
-        grid.innerHTML = "";
+let selectedEmotion = null;
 
-        emotionsList.forEach(em => {
-            const card = document.createElement("div");
-            card.classList.add("emotion-card");
+function renderEmotions() {
+    const grid = document.getElementById("emotion-grid");
+    if (!grid) return;
 
-            card.innerHTML = `
-                <span class="emotion-color" style="background:${em.color}"></span>
-                ${em.name}
-            `;
+    grid.innerHTML = "";
 
-            card.addEventListener("click", () => {
-                document.querySelectorAll(".emotion-card").forEach(c => c.classList.remove("selected"));
-                card.classList.add("selected");
+    emotionsList.forEach(em => {
+        const item = document.createElement("div");
+        item.classList.add("emotion-item");
+        item.dataset.name = em.name;
 
-                selectedEmotion = em.name;
-                selectedColor = em.color;
-            });
+        item.innerHTML = `
+            <div class="legend-dot" style="background:${em.color}; margin:auto;"></div>
+            <p>${em.name}</p>
+        `;
 
-            grid.appendChild(card);
+        item.addEventListener("click", () => {
+            document.querySelectorAll(".emotion-item")
+                .forEach(i => i.classList.remove("active"));
+
+            item.classList.add("active");
+            selectedEmotion = em.name;
         });
-    }
+
+        grid.appendChild(item);
+    });
+}
 
     renderEmotions();
 
