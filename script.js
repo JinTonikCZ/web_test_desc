@@ -237,7 +237,6 @@ function initializeCheckInModal() {
     const closeBtn = document.getElementById("close-checkin");
 
     const step1 = document.getElementById("step-1");
-    const step2 = document.getElementById("step-2");
     const step3 = document.getElementById("step-3");
 
     const modalNext = document.getElementById("modal-next");
@@ -259,89 +258,84 @@ function initializeCheckInModal() {
         { name: "Neutral", color: "#d5c7b4" },
     ];
 
-let selectedEmotion = null;
+    function renderEmotions() {
+        const grid = document.getElementById("emotion-grid");
+        if (!grid) return;
 
-function renderEmotions() {
-    const grid = document.getElementById("emotion-grid");
-    if (!grid) return;
+        grid.innerHTML = "";
 
-    grid.innerHTML = "";
+        emotionsList.forEach(em => {
+            const item = document.createElement("div");
+            item.classList.add("emotion-item");
+            item.dataset.name = em.name;
 
-    emotionsList.forEach(em => {
-        const item = document.createElement("div");
-        item.classList.add("emotion-item");
-        item.dataset.name = em.name;
+            item.innerHTML = `
+                <div class="legend-dot" style="background:${em.color}; margin:auto;"></div>
+                <p>${em.name}</p>
+            `;
 
-        item.innerHTML = `
-            <div class="legend-dot" style="background:${em.color}; margin:auto;"></div>
-            <p>${em.name}</p>
-        `;
+            item.addEventListener("click", () => {
+                document.querySelectorAll(".emotion-item")
+                    .forEach(i => i.classList.remove("active"));
 
-        item.addEventListener("click", () => {
-            document.querySelectorAll(".emotion-item")
-                .forEach(i => i.classList.remove("active"));
+                item.classList.add("active");
+                selectedEmotion = em.name;
+                selectedColor = em.color;
+            });
 
-            item.classList.add("active");
-            selectedEmotion = em.name;
+            grid.appendChild(item);
         });
-
-        grid.appendChild(item);
-    });
-}
+    }
 
     renderEmotions();
 
     function updateStepView() {
         step1.style.display = currentStep === 1 ? "block" : "none";
-        step2.style.display = currentStep === 2 ? "block" : "none";
         step3.style.display = currentStep === 3 ? "block" : "none";
 
-        document.getElementById("current-step").textContent = currentStep;
-        document.getElementById("progress-fill").style.width = `${(currentStep / 3) * 100}%`;
+        document.getElementById("current-step").textContent = currentStep === 1 ? 1 : 2;
+        document.getElementById("progress-fill").style.width =
+            `${(currentStep === 1 ? 1 : 2) / 2 * 100}%`;
 
         modalBack.style.display = currentStep === 1 ? "none" : "inline-block";
         modalNext.textContent = currentStep === 3 ? "Finish" : "Next";
     }
 
-    // Открыть модалку
     openBtn.addEventListener("click", () => {
         modal.classList.add("active");
         currentStep = 1;
         updateStepView();
     });
 
-    // Закрыть модалку
     closeBtn.addEventListener("click", () => modal.classList.remove("active"));
     modal.querySelector(".modal-overlay").addEventListener("click", () => modal.classList.remove("active"));
 
-    // Назад
     modalBack.addEventListener("click", () => {
-        if (currentStep > 1) {
-            currentStep--;
-            updateStepView();
-        }
+        currentStep = 1;
+        updateStepView();
     });
 
-    // Вперёд / Finish
     modalNext.addEventListener("click", () => {
         if (currentStep === 1 && !selectedEmotion) {
             alert("Please select an emotion");
             return;
         }
 
-        if (currentStep < 3) {
-            currentStep++;
+        if (currentStep === 1) {
+            currentStep = 3;
             updateStepView();
-        } else {
-            saveEmotionEntry(selectedEmotion, selectedColor);
-            modal.classList.remove("active");
+            return;
         }
+
+        saveEmotionEntry(selectedEmotion, selectedColor);
+        modal.classList.remove("active");
     });
 
     intensityInput.addEventListener("input", () => {
         intensityValue.textContent = intensityInput.value;
     });
 }
+
 
 function saveEmotionEntry(emotion, color) {
     const intensity = parseInt(document.getElementById("intensity").value);
