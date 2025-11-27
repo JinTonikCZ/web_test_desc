@@ -586,17 +586,32 @@ window.onerror = function (msg, src, line, col, err) {
     console.warn("Non-blocking JS error:", msg, "at", line, col);
     return true; // предотвращает красные ошибки на GitHub Pages
 };
+/* ===========================
+   AUTH FIX FOR GITHUB PAGES
+=========================== */
 
-/* =====================================
-      AUTO INITIALIZATION AFTER LOAD
-===================================== */
-
-// если мы на странице аналитики — обновляем весь UI
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("%cEmotional Flow loaded successfully", "color:#6d28d9; font-size:14px;");
+    const loginBtn = document.getElementById("login-btn");
+    const authForm = document.getElementById("auth-form");
 
-    if (window.location.pathname.includes("analytics")) {
-        console.log("Generating weekly chart...");
-        generateWeeklyChart();
+    if (authForm) {
+        authForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (!email || !password) {
+                alert("Please enter email and password");
+                return;
+            }
+
+            // сохраняем пользователя
+            localStorage.setItem("eflow_user", email);
+
+            // редирект на аналитику
+            window.location.href = "/web_test_desc/analytics.html";
+        });
     }
 });
+
