@@ -780,3 +780,10 @@ body {
     background: #eef2ff;
     transform: scale(1.05);
 }
+
+.calendar-day.active {
+    outline: 2px solid #6366f1;
+    border-radius: 6px;
+    background: rgba(99,102,241,0.1);
+}
+
