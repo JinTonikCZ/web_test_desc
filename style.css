@@ -781,9 +781,19 @@ body {
     transform: scale(1.05);
 }
 
+.calendar-day {
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background: rgba(109, 40, 217, 0.1);  
+    border-radius: 8px;
+}
+
 .calendar-day.active {
-    outline: 2px solid #6366f1;
-    border-radius: 6px;
-    background: rgba(99,102,241,0.1);
+    background: rgba(109, 40, 217, 0.2);
+    border-radius: 8px;
+    border: 2px solid #6d28d9;
 }
 
