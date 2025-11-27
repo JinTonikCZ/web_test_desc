@@ -291,14 +291,14 @@ function initializeCheckInModal() {
 
     function updateStepView() {
         step1.style.display = currentStep === 1 ? "block" : "none";
-        step3.style.display = currentStep === 3 ? "block" : "none";
+        step3.style.display = currentStep === 2 ? "block" : "none";
 
         document.getElementById("current-step").textContent = currentStep === 1 ? 1 : 2;
         document.getElementById("progress-fill").style.width =
             `${(currentStep === 1 ? 1 : 2) / 2 * 100}%`;
 
         modalBack.style.display = currentStep === 1 ? "none" : "inline-block";
-        modalNext.textContent = currentStep === 3 ? "Finish" : "Next";
+        modalNext.textContent = currentStep === 2 ? "Finish" : "Next";
     }
 
     openBtn.addEventListener("click", () => {
@@ -322,7 +322,7 @@ function initializeCheckInModal() {
         }
 
         if (currentStep === 1) {
-            currentStep = 3;
+            currentStep = 2;
             updateStepView();
             return;
         }
