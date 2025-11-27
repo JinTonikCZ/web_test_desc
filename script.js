@@ -212,7 +212,12 @@ function initializeCalendar() {
                 cell.appendChild(dotsWrapper);
                 cell.classList.add("has-entry");
 
-                cell.addEventListener("click", () => openDetailsModal(fullDate));
+                cell.addEventListener("click", () => {
+    document.querySelectorAll(".calendar-day").forEach(d => d.classList.remove("active"));
+    cell.classList.add("active");
+    openDetailsModal(fullDate);
+});
+
             }
 
             grid.appendChild(cell);
@@ -274,14 +279,40 @@ function initializeCheckInModal() {
                 <p>${em.name}</p>
             `;
 
-            item.addEventListener("click", () => {
-                document.querySelectorAll(".emotion-item")
-                    .forEach(i => i.classList.remove("active"));
+cell.addEventListener("click", () => {
+    // Снимаем выделение со всех дней
+    document.querySelectorAll(".calendar-day").forEach(d => d.classList.remove("active"));
 
-                item.classList.add("active");
-                selectedEmotion = em.name;
-                selectedColor = em.color;
+    // Выделяем текущий
+    cell.classList.add("active");
+
+    // Загружаем только записи выбранного дня
+    const selected = fullDate;
+    const all = JSON.parse(localStorage.getItem("eflow_emotions")) || [];
+    const forDay = all.filter(e => e.date === selected);
+
+    // Обновляем правый блок "Today's Details"
+    const list = document.getElementById("detail-entries");
+    if (list) {
+        list.innerHTML = "";
+
+        if (forDay.length === 0) {
+            list.innerHTML = "<p>No entries for this day.</p>";
+        } else {
+            forDay.forEach(entry => {
+                const div = document.createElement("div");
+                div.classList.add("detail-item");
+                div.innerHTML = `
+                    <strong>${entry.emotion}</strong><br>
+                    Intensity: ${entry.intensity}<br>
+                    <small>${entry.note || ""}</small>
+                `;
+                list.appendChild(div);
             });
+        }
+    }
+});
+
 
             grid.appendChild(item);
         });
@@ -291,7 +322,7 @@ function initializeCheckInModal() {
 
     function updateStepView() {
         step1.style.display = currentStep === 1 ? "block" : "none";
-        step3.style.display = currentStep === 2 ? "block" : "none";
+        step2.style.display = currentStep === 2 ? "block" : "none";
 
         document.getElementById("current-step").textContent = currentStep === 1 ? 1 : 2;
         document.getElementById("progress-fill").style.width =
