@@ -237,7 +237,7 @@ function initializeCheckInModal() {
     const closeBtn = document.getElementById("close-checkin");
 
     const step1 = document.getElementById("step-1");
-    const step3 = document.getElementById("step-3");
+    const step2 = document.getElementById("step-2");
 
     const modalNext = document.getElementById("modal-next");
     const modalBack = document.getElementById("modal-back");
