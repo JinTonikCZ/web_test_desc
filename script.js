@@ -281,39 +281,14 @@ function initializeCheckInModal() {
                 <p>${em.name}</p>
             `;
 
-cell.addEventListener("click", () => {
-    // Снимаем выделение со всех дней
-    document.querySelectorAll(".calendar-day").forEach(d => d.classList.remove("active"));
+item.addEventListener("click", () => {
+    document.querySelectorAll(".emotion-item").forEach(i => i.classList.remove("active"));
+    item.classList.add("active");
 
-    // Выделяем текущий
-    cell.classList.add("active");
-
-    // Загружаем только записи выбранного дня
-    const selected = fullDate;
-    const all = JSON.parse(localStorage.getItem("eflow_emotions")) || [];
-    const forDay = all.filter(e => e.date === selected);
-
-    // Обновляем правый блок "Today's Details"
-    const list = document.getElementById("detail-entries");
-    if (list) {
-        list.innerHTML = "";
-
-        if (forDay.length === 0) {
-            list.innerHTML = "<p>No entries for this day.</p>";
-        } else {
-            forDay.forEach(entry => {
-                const div = document.createElement("div");
-                div.classList.add("detail-item");
-                div.innerHTML = `
-                    <strong>${entry.emotion}</strong><br>
-                    Intensity: ${entry.intensity}<br>
-                    <small>${entry.note || ""}</small>
-                `;
-                list.appendChild(div);
-            });
-        }
-    }
+    selectedEmotion = em.name;
+    selectedColor = em.color;
 });
+
 
 
             grid.appendChild(item);
@@ -633,28 +608,4 @@ window.onerror = function (msg, src, line, col, err) {
    AUTH FIX FOR GITHUB PAGES
 =========================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-    const loginBtn = document.getElementById("login-btn");
-    const authForm = document.getElementById("auth-form");
-
-    if (authForm) {
-        authForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-
-            if (!email || !password) {
-                alert("Please enter email and password");
-                return;
-            }
-
-            // сохраняем пользователя
-            localStorage.setItem("eflow_user", email);
-
-            // редирект на аналитику
-            window.location.href = "/web_test_desc/analytics.html";
-        });
-    }
-});
 
