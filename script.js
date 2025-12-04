@@ -30,38 +30,42 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (authForm) {
-        authForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+if (authForm) {
+    authForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
-            if (isSignup) {
-                const confirmPassword = document.getElementById("confirm-password").value.trim();
+        // --- SIGN UP ---
+        if (isSignup) {
+            const confirmPassword = document.getElementById("confirm-password").value.trim();
 
             if (password !== confirmPassword) {
-    alert("Passwords do not match");
-    return; // ⛔ Останавливаем переход!
-}
-
-                }
-
-                alert("Account created successfully!");
-                isSignup = false;
-                toggleLink.textContent = "Sign Up";
-                signupFields.style.display = "none";
-                authTitle.textContent = "Welcome Back";
-                authSubtitle.textContent = "Track your emotional journey";
-
+                alert("Passwords do not match");
                 return;
             }
 
+            // регистрация
             localStorage.setItem("eflow_user", email);
+            alert("Account created successfully!");
 
-            window.location.href = "/web_test_desc/analytics.html";
-        });
-    }
+            // меняем интерфейс обратно на Sign In
+            isSignup = false;
+            signupFields.style.display = "none";
+            authTitle.textContent = "Welcome Back";
+            authSubtitle.textContent = "Track your emotional journey";
+            toggleLink.textContent = "Sign Up";
+            document.querySelector(".btn-primary").textContent = "Sign In";
+
+            return; // ВЫХОД → остаёмся на странице логина
+        }
+
+        // --- SIGN IN ---
+        localStorage.setItem("eflow_user", email);
+        window.location.href = "/web_test_desc/analytics.html";
+    });
+}
 
     const userEmail = localStorage.getItem("eflow_user");
     const userEmailBtn = document.getElementById("user-menu-btn");
