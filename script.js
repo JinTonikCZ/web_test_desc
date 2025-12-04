@@ -40,9 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (isSignup) {
                 const confirmPassword = document.getElementById("confirm-password").value.trim();
 
-                if (password !== confirmPassword) {
-                    alert("Passwords do not match");
-                    return;
+            if (password !== confirmPassword) {
+    alert("Passwords do not match");
+    return; // ⛔ Останавливаем переход!
+}
+
                 }
 
                 alert("Account created successfully!");
