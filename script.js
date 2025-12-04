@@ -322,17 +322,27 @@ cell.addEventListener("click", () => {
 
     renderEmotions();
 
-    function updateStepView() {
-        step1.style.display = currentStep === 1 ? "block" : "none";
-        step2.style.display = currentStep === 2 ? "block" : "none";
+function updateStepView() {
+    const step1 = document.getElementById("step-1");
+    const step3 = document.getElementById("step-3"); // теперь это step 2
 
-        document.getElementById("current-step").textContent = currentStep === 1 ? 1 : 2;
-        document.getElementById("progress-fill").style.width =
-            `${(currentStep === 1 ? 1 : 2) / 2 * 100}%`;
+    // Показываем только один шаг
+    step1.style.display = currentStep === 1 ? "block" : "none";
+    step3.style.display = currentStep === 2 ? "block" : "none";
 
-        modalBack.style.display = currentStep === 1 ? "none" : "inline-block";
-        modalNext.textContent = currentStep === 2 ? "Finish" : "Next";
-    }
+    // Обновляем номер шага (теперь шагов — 2)
+    document.getElementById("current-step").textContent = `${currentStep} / 2`;
+
+    // Обновляем прогресс-бар (0% → 50%)
+    document.getElementById("progress-fill").style.width =
+        `${(currentStep - 1) * 50}%`;
+
+    // Кнопки
+    modalBack.style.display = currentStep === 1 ? "none" : "inline-block";
+    modalNext.textContent = currentStep === 2 ? "Finish" : "Next";
+}
+
+
 
     openBtn.addEventListener("click", () => {
         modal.classList.add("active");
